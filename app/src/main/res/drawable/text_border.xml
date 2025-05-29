@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Цвет фона текстового блока -->
+    <stroke android:width="2dp" android:color="#000000"/> <!-- Цвет и толщина границы -->
+    <corners android:radius="8dp"/> <!-- Скругление углов (опционально) -->
+</shape>

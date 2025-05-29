@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TypeFast</string>
+    <string name="chats">Чаты</string>
+    <string name="chat">Чат</string>
+    <string name="contacts">Контакты</string>
+    <string name="setting">Настройки</string>
+    <string name="add_contact">Добавить контакт</string>
+    <string name="contact_list">Список контактов</string>
+</resources>
