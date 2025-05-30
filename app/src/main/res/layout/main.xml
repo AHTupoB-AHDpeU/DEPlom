@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Заголовок "Главный экран" -->
     <TextView
         android:id="@+id/textViewHeader"
         android:layout_width="wrap_content"
@@ -30,7 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- Текстовый блок -->
     <TextView
         android:id="@+id/textViewTop"
         android:layout_width="wrap_content"
@@ -45,7 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"/>
 
-    <!-- Поле ввода под TextView -->
     <EditText
         android:id="@+id/editTextInput"
         android:layout_width="0dp"
@@ -54,7 +51,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:background="@drawable/text_border"
-        android:padding="12dp"
+        android:padding="14dp"
         android:maxLines="4"
         android:inputType="textMultiLine"
         app:layout_constraintTop_toBottomOf="@id/textViewTop"
@@ -64,7 +61,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"/>
 
-    <!-- Кнопка под EditText -->
     <Button
         android:id="@+id/chat"
         android:layout_width="200dp"
@@ -80,7 +76,7 @@
         android:id="@+id/textV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TypeFast 0.2"
+        android:text="TypeFast 0.4"
         android:textSize="14sp"
         android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
