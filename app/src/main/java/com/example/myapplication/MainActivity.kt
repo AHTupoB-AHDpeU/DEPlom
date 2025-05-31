@@ -18,6 +18,9 @@ import android.graphics.Color
 import android.widget.EditText
 import android.widget.TextView
 import kotlin.math.roundToInt
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -53,7 +56,7 @@ class Main : Fragment(R.layout.main) {
         textView = view.findViewById(R.id.textViewTop)
         editText = view.findViewById(R.id.editTextInput)
 
-        targetText = "Жизнь - это просто повод поесть гovna. Жизнь - это просто повод поесть гovna. Жизнь - это просто повод поесть гovna. Жизнь - это просто повод поесть гovna."
+        targetText = "Если хочешь депнуть мне - давай скорей. Ну если хватит на додеп, то депни всё. Да нам медлить ни к чему, давай въебём всё. Всё окупится, поверь. Само собой."
 
         textView.text = targetText
 
@@ -122,13 +125,28 @@ class Main : Fragment(R.layout.main) {
     }
 
     private fun showResultDialog(speed: Int, accuracy: Int) {
-        activity?.let {
-            AlertDialog.Builder(it)
-                .setTitle("Результат")
-                .setMessage("Скорость: $speed зн/мин\nТочность: $accuracy%\nОшибок: $errorCount")
-                .setPositiveButton("ОК", null)
-                .show()
-        }
+        val currentTime = SimpleDateFormat("HH:mm:ss dd.MM.yyyy", Locale.getDefault()).format(Date())
+        val result = "Время: $currentTime \nСкорость: $speed зн./мин \nТочность: $accuracy%\nОшибок: $errorCount"
+        saveResultToHistory(result)
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("Результат")
+            .setMessage(result)
+            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            .show()
+
+        editText.setText("")
+        textView.text = targetText
+        hasStarted = false
+    }
+
+    private fun saveResultToHistory(result: String) {
+        val sharedPref = activity?.getSharedPreferences("history_pref", AppCompatActivity.MODE_PRIVATE)
+        val history = sharedPref?.getStringSet("history_set", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
+
+        history.add(result)
+
+        sharedPref?.edit()?.putStringSet("history_set", history)?.apply()
     }
 }
 
