@@ -63,32 +63,29 @@
 
     <Button
         android:id="@+id/chat"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:text="Начать заново"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/editTextInput"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"/>
+        app:layout_constraintStart_toStartOf="@id/editTextInput"
+        app:layout_constraintTop_toBottomOf="@id/editTextInput" />
 
     <Button
         android:id="@+id/text_button"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:text="Сменить текст"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/editTextInput"
-        app:layout_constraintStart_toEndOf="@id/chat"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"/>
+        app:layout_constraintEnd_toEndOf="@id/editTextInput"
+        app:layout_constraintTop_toBottomOf="@id/editTextInput" />
 
     <TextView
         android:id="@+id/textV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TypeFast 1.0"
+        android:text="TypeFast 1.11"
         android:textSize="14sp"
         android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
