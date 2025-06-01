@@ -49,15 +49,34 @@ class Main : Fragment(R.layout.main) {
     private lateinit var editText: EditText
     private var errorCount = 0
 
+    private lateinit var textList: List<String>
+    private var currentTextIndex = 0
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val button = view.findViewById<Button>(R.id.chat)
+        val switchTextButton = view.findViewById<Button>(R.id.text_button)
+
         textView = view.findViewById(R.id.textViewTop)
         editText = view.findViewById(R.id.editTextInput)
 
-        targetText = "Если хочешь депнуть мне - давай скорей. Ну если хватит на додеп, то депни всё. Да нам медлить ни к чему, давай въебём всё. Всё окупится, поверь. Само собой."
+        //targetText = "Если хочешь депнуть мне - давай скорей. Ну если хватит на додеп, то депни всё. Да нам медлить ни к чему, давай въебём всё. Всё окупится, поверь. Само собой."
+        textList = listOf(
+            getString(R.string.text_1),
+            getString(R.string.text_2),
+            getString(R.string.text_3),
+            getString(R.string.text_4),
+            getString(R.string.text_5),
+            getString(R.string.text_6),
+            getString(R.string.text_7),
+            getString(R.string.text_8),
+            getString(R.string.text_9),
+            getString(R.string.text_10)
+        )
 
+        targetText = textList[currentTextIndex]
         textView.text = targetText
 
         editText.addTextChangedListener(object : TextWatcher {
@@ -121,6 +140,14 @@ class Main : Fragment(R.layout.main) {
             textView.text = targetText
             hasStarted = false
         }
+        switchTextButton.setOnClickListener {
+            currentTextIndex = (currentTextIndex + 1) % textList.size
+            targetText = textList[currentTextIndex]
+            textView.text = targetText
+            editText.setText("")
+            hasStarted = false
+        }
+
 
     }
 
