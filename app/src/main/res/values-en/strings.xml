@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TypeFast</string>
+    <string name="setting">Setting</string>
+    <string name="history">History</string>
+    <string name="no_history">There are no records in the history</string>
+    <string name="delete_history">Clear history</string>
+    <string name="text_0">The text field where the text is displayed.\n\nThere may be several sentences of text here.\n\n\n\n</string>
+    <string name="enter_text">Enter the text here...</string>
+    <string name="restart">Start again</string>
+    <string name="change_text">Change text</string>
+    <string name="version">TypeFast 1.2</string>
+    <string name="result">Result</string>
+
+    <string name="time">Time:</string>
+    <string name="speed">Speed:</string>
+    <string name="accuracy">Accuracy:</string>
+    <string name="error">Errors:</string>
+    <string name="signs">sig./min</string>
+
+    <string name="main">Home screen</string>
+
+    <string name="text_1">The sun was sinking below the horizon, leaving the bright colors of sunset. A light wind stirred the trees, and birds sang the last songs of the day. The air was filled with the scent of herbs.</string>
+    <string name="text_2">Modern technology is changing lives. Every day there are new devices that make work and leisure easier. People are increasingly using smartphones, forgetting about live communication.</string>
+    <string name="text_3">In the morning, she made coffee according to an old recipe. The aroma filled the kitchen as she slowly brewed the drink, savoring every sip. A single titmouse was singing outside the window.</string>
+    <string name="text_4">Galaxies are systems of stars, gas, and dark matter. Our Galaxy, the Milky Way, contains billions of stars and is expanding in an infinite universe. Scientists have been studying it for millions of years.</string>
+    <string name="text_5">The artist finished the painting by adding the last stroke. He looked at the canvas, remembering the inspiration that led to its creation. The painting breathed light and warmth.</string>
+    <string name="text_6">The runner crossed the finish line, exhausted but happy. The audience applauded, and the coach smiled proudly, knowing the price of this victory. His legs were shaking with fatigue.</string>
+    <string name="text_7">The cookies smelled of cinnamon and vanilla, cooling on the table. The children were waiting for permission to try, staring at the golden crust. Mom smiled and allowed me to take one at a time.</string>
+    <string name="text_8">The mountain air was fresh, and every step was difficult. The views justified the efforts, tourists photographed the sunset, forgetting about fatigue. Clouds floated under my feet.</string>
+    <string name="text_9">The cat deftly jumped off the shelf without dropping the vase. She walked by as if nothing had happened, leaving the hostess in disbelief and amazement. She couldn\'t understand how this was possible.</string>
+    <string name="text_10">The library was silent, broken by the rustle of pages. Readers immersed themselves in books, forgetting about time and the world around them. Even the clock has slowed down.</string>
+
+</resources>

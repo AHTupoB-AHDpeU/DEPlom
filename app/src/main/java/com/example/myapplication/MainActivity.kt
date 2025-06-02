@@ -62,7 +62,6 @@ class Main : Fragment(R.layout.main) {
         textView = view.findViewById(R.id.textViewTop)
         editText = view.findViewById(R.id.editTextInput)
 
-        //targetText = "Если хочешь депнуть мне - давай скорей. Ну если хватит на додеп, то депни всё. Да нам медлить ни к чему, давай въебём всё. Всё окупится, поверь. Само собой."
         textList = listOf(
             getString(R.string.text_1),
             getString(R.string.text_2),
@@ -153,11 +152,11 @@ class Main : Fragment(R.layout.main) {
 
     private fun showResultDialog(speed: Int, accuracy: Int) {
         val currentTime = SimpleDateFormat("HH:mm:ss dd.MM.yyyy", Locale.getDefault()).format(Date())
-        val result = "Время: $currentTime \nСкорость: $speed зн./мин \nТочность: $accuracy%\nОшибок: $errorCount"
+        val result = "${getString(R.string.time)} $currentTime \n${getString(R.string.speed)} $speed ${getString(R.string.signs)} \n${getString(R.string.accuracy)} $accuracy%\n${getString(R.string.error)} $errorCount"
         saveResultToHistory(result)
 
         AlertDialog.Builder(requireContext())
-            .setTitle("Результат")
+            .setTitle("${getString(R.string.result)}")
             .setMessage(result)
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
             .show()

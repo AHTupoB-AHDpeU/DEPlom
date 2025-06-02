@@ -38,7 +38,7 @@ class History : Fragment() {
             var counter = 1
             history?.forEach {
                 val textView = TextView(context)
-                textView.text = "Результат №$counter:\n$it"
+                textView.text = "${getString(R.string.result)} $counter:\n$it"
                 textView.textSize = 18f
                 val params = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,

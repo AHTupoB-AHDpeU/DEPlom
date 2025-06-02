@@ -1,11 +1,23 @@
 <resources>
     <string name="app_name">TypeFast</string>
-    <string name="chats">Чаты</string>
-    <string name="chat">Чат</string>
-    <string name="contacts">Контакты</string>
     <string name="setting">Настройки</string>
-    <string name="add_contact">Добавить контакт</string>
-    <string name="contact_list">Список контактов</string>
+    <string name="history">История</string>
+    <string name="no_history">Нет записей в истории</string>
+    <string name="delete_history">Очистить историю</string>
+    <string name="text_0">Текстовое поле, где отображается текст.\n\nЗдесь может быть несколько предложений текста.\n\n\n\n</string>
+    <string name="enter_text">Введите текст здесь...</string>
+    <string name="restart">Начать заново</string>
+    <string name="change_text">Сменить текст</string>
+    <string name="version">TypeFast 1.2</string>
+    <string name="result">Результат</string>
+
+    <string name="time">Время:</string>
+    <string name="speed">Скорость:</string>
+    <string name="accuracy">Точность:</string>
+    <string name="error">Ошибок:</string>
+    <string name="signs">зн./мин</string>
+
+    <string name="main">Главный экран</string>
 
     <string name="text_1">Солнце опускалось за горизонтом, оставляя яркие краски заката. Легкий ветер колыхал деревья, а птицы пели последние песни дня. Воздух был насыщен ароматом трав.</string>
     <string name="text_2">Современные технологии меняют жизнь. Каждый день появляются новые устройства, облегчающие работу и досуг. Люди всё чаще используют смартфоны, забывая о живом общении.</string>
