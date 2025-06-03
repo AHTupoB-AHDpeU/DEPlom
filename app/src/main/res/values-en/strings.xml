@@ -8,7 +8,7 @@
     <string name="enter_text">Enter the text here...</string>
     <string name="restart">Start again</string>
     <string name="change_text">Change text</string>
-    <string name="version">TypeFast 1.2</string>
+    <string name="version">TypeFast 1.3</string>
     <string name="result">Result</string>
 
     <string name="time">Time:</string>
@@ -18,6 +18,7 @@
     <string name="signs">sig./min</string>
 
     <string name="main">Home screen</string>
+    <string name="best_result">The best result</string>
 
     <string name="text_1">The sun was sinking below the horizon, leaving the bright colors of sunset. A light wind stirred the trees, and birds sang the last songs of the day. The air was filled with the scent of herbs.</string>
     <string name="text_2">Modern technology is changing lives. Every day there are new devices that make work and leisure easier. People are increasingly using smartphones, forgetting about live communication.</string>

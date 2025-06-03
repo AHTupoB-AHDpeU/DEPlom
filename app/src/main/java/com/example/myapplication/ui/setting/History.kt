@@ -26,14 +26,59 @@ class History : Fragment() {
         val emptyTextView = view.findViewById<TextView>(R.id.emptyHistoryText)
         val scrollView = view.findViewById<View>(R.id.scrollView)
 
+        val bestResultText = view.findViewById<TextView>(R.id.bestResultText)
+
         linearLayout.removeAllViews()
 
         if (history.isNullOrEmpty()) {
             emptyTextView.visibility = View.VISIBLE
             scrollView.visibility = View.GONE
+            bestResultText.visibility = View.GONE
         } else {
             emptyTextView.visibility = View.GONE
             scrollView.visibility = View.VISIBLE
+
+            // Лучший результат
+            var bestEntry: String? = null
+            var bestSpeed = -1
+            var bestAccuracy = -1
+
+            for (entry in history) {
+                val speedRegex = Regex("""${getString(R.string.speed)} (\d+)""")
+                val accRegex = Regex("""${getString(R.string.accuracy)} (\d+)%""")
+
+                val speed = speedRegex.find(entry)?.groupValues?.get(1)?.toIntOrNull() ?: 0
+                val accuracy = accRegex.find(entry)?.groupValues?.get(1)?.toIntOrNull() ?: 0
+
+                if (bestEntry == null) {
+                    bestEntry = entry
+                    bestSpeed = speed
+                    bestAccuracy = accuracy
+                    continue
+                }
+                when {
+                    accuracy >= bestAccuracy + 5 -> {
+                        bestEntry = entry
+                        bestSpeed = speed
+                        bestAccuracy = accuracy
+                    }
+                    kotlin.math.abs(accuracy - bestAccuracy) < 5 && speed > bestSpeed -> {
+                        bestEntry = entry
+                        bestSpeed = speed
+                        bestAccuracy = accuracy
+                    }
+                    accuracy == bestAccuracy && speed == bestSpeed -> {
+                        bestEntry = entry
+                    }
+                }
+            }
+
+            if (bestEntry != null) {
+                bestResultText.visibility = View.VISIBLE
+                bestResultText.text = "${getString(R.string.best_result)}:\n$bestEntry"
+            } else {
+                bestResultText.visibility = View.GONE
+            }
 
             var counter = 1
             history?.forEach {
@@ -59,6 +104,8 @@ class History : Fragment() {
             linearLayout.removeAllViews()
             emptyTextView.visibility = View.VISIBLE
             scrollView.visibility = View.GONE
+
+            bestResultText.visibility = View.GONE
         }
 
         return view

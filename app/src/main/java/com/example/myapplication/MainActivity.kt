@@ -36,8 +36,23 @@ class MainActivity : AppCompatActivity() {
 
         // связываем bottomNavigationView и navController
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        checkLanguage()
     }
 
+    private fun checkLanguage() {
+        val sharedPref = getSharedPreferences("history_pref", MODE_PRIVATE)
+        val savedLang = sharedPref.getString("last_lang", null)
+        val currentLang = Locale.getDefault().language
+
+        if (savedLang != null && savedLang != currentLang) {
+            sharedPref.edit()
+                .remove("history_set")
+                .apply()
+        }
+
+        sharedPref.edit().putString("last_lang", currentLang).apply()
+    }
 }
 
 class Main : Fragment(R.layout.main) {
@@ -174,7 +189,8 @@ class Main : Fragment(R.layout.main) {
 
         sharedPref?.edit()?.putStringSet("history_set", history)?.apply()
     }
+
 }
 
-class History : Fragment(R.layout.history) {}
+//class History : Fragment(R.layout.history) {}
 
