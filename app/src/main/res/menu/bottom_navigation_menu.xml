@@ -8,4 +8,8 @@
         android:id="@+id/placeholder3"
         android:icon="@drawable/outline_assignment_24"
         android:title="@string/history" />
+    <item
+        android:id="@+id/placeholder2"
+        android:icon="@drawable/outline_chess_24"
+        android:title="@string/achievements" />
 </menu>

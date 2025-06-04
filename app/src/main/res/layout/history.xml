@@ -36,10 +36,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/best_result"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:gravity="center"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/avgResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/avg_result"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/bestResultText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
@@ -50,7 +63,7 @@
         android:layout_height="0dp"
         android:paddingHorizontal="16dp"
         android:importantForAccessibility="no"
-        app:layout_constraintTop_toBottomOf="@id/bestResultText"
+        app:layout_constraintTop_toBottomOf="@id/avgResultText"
         app:layout_constraintBottom_toTopOf="@id/btnClearHistory"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"

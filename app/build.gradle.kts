@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.typefast"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        applicationId = "com.example.typefast"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "1.3"
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -5,12 +5,16 @@
     app:startDestination="@id/placeholder">
 
     <fragment android:id="@+id/placeholder"
-        android:name="com.example.myapplication.Main"
+        android:name="com.example.typefast.Main"
         tools:layout="@layout/main" >
     </fragment>
 
     <fragment android:id="@+id/placeholder3"
-        android:name="com.example.myapplication.ui.setting.History"
+        android:name="com.example.typefast.ui.setting.History"
         tools:layout="@layout/history"/>
+
+    <fragment android:id="@+id/placeholder2"
+        android:name="com.example.typefast.ui.achievements.Achievements"
+        tools:layout="@layout/achievements"/>
 
 </navigation>
