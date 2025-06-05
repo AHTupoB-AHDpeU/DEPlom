@@ -175,7 +175,7 @@ class Main : Fragment(R.layout.main) {
             val achievementsPref = requireActivity().getSharedPreferences("achievements", AppCompatActivity.MODE_PRIVATE)
             if (!achievementsPref.getBoolean("has100", false)) {
                 achievementsPref.edit().putBoolean("has100", true).apply()
-                Toast.makeText(requireContext(), "Достижение разблокировано: Идеальная точность!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "${getString(R.string.achievement_2_complete)}", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -203,7 +203,7 @@ class Main : Fragment(R.layout.main) {
 
         if (!alreadyUnlocked) {
             achievementsPref.edit().putBoolean("hasFirst", true).apply()
-            Toast.makeText(requireContext(), "Достижение разблокировано: Первый результат!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "${getString(R.string.achievement_1_complete)}", Toast.LENGTH_SHORT).show()
         }
     }
 

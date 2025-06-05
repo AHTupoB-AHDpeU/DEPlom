@@ -33,14 +33,28 @@ class AchievementAdapter(
         holder.title.text = achievement.title
         holder.desc.text = achievement.description
 
+        val isDarkTheme = (holder.itemView.context.resources.configuration.uiMode and
+                android.content.res.Configuration.UI_MODE_NIGHT_MASK) == android.content.res.Configuration.UI_MODE_NIGHT_YES
+
+
         if (achievement.achieved) {
             holder.icon.setImageResource(R.drawable.ic_trophy_color) // цветная иконка
-            holder.title.setTextColor(Color.WHITE)
-            holder.desc.setTextColor(Color.LTGRAY)
+            if (isDarkTheme) {
+                holder.title.setTextColor(Color.WHITE)
+                holder.desc.setTextColor(Color.LTGRAY)
+            } else {
+                holder.title.setTextColor(Color.GRAY)
+                holder.desc.setTextColor(Color.GRAY)
+            }
         } else {
             holder.icon.setImageResource(R.drawable.ic_trophy_gray) // серая
-            holder.title.setTextColor(Color.GRAY)
-            holder.desc.setTextColor(Color.GRAY)
+            if (isDarkTheme) {
+                holder.title.setTextColor(Color.GRAY)
+                holder.desc.setTextColor(Color.GRAY)
+            } else {
+                holder.title.setTextColor(Color.LTGRAY)
+                holder.desc.setTextColor(Color.LTGRAY)
+            }
         }
     }
 }
