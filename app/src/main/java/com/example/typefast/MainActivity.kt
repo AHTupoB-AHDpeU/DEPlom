@@ -22,6 +22,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import android.widget.Toast
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -163,7 +166,12 @@ class Main : Fragment(R.layout.main) {
             hasStarted = false
         }
 
-
+        val mainLayout = view.findViewById<View>(R.id.mainLayout)
+        ViewCompat.setOnApplyWindowInsetsListener(mainLayout) { v, insets ->
+            val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updatePadding(bottom = systemInsets.bottom)
+            insets
+        }
     }
 
     private fun showResultDialog(speed: Int, accuracy: Int) {
